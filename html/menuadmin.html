@@ -1,0 +1,129 @@
+    <script type="text/javascript">
+    	var aux = "close";
+    	$(document).ready(function(){
+			$('.drop').on("click", function(){
+				if($("#cadastrar").attr("class") != $("#consultar").attr("class") && $(this).find("span").hasClass("glyphicon-chevron-up")){	
+					$("#cadastrar").toggleClass("glyphicon-chevron-up glyphicon-chevron-down");	
+					$("#consultar").toggleClass("glyphicon-chevron-up glyphicon-chevron-down");
+				}
+				if($("#cadastrar").attr("class") == $("#consultar").attr("class")){
+					$(this).find("span").toggleClass("glyphicon-chevron-up glyphicon-chevron-down");
+				}
+			});	
+		});
+    </script>
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading drop" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> 
+                <h4 class="panel-title">
+                    <a>
+                    Cadastrar</a><span id="cadastrar" class="glyphicon glyphicon-chevron-down pull-right"></span>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <table class="table">
+                        <tr>
+                            <td>
+                               <a href="../cadastros/cadastraOri.php" class="botaoLateral">Orientador</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="../cadastros/cadastraQues.php" class="botaoLateral">Questão</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                </span><a href="../cadastros/cadastraCand.php" class="botaoLateral">Candidato</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="../cadastros/cadastraDisci.php" class="botaoLateral">Disciplina</a>                                        
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                               <a href="../cadastros/cadastraCarg.php" class="botaoLateral">Cargo</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading drop" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                <h4 class="panel-title">
+                    <a>Consultar</a><span id="consultar" class="glyphicon glyphicon-chevron-down pull-right" ></span>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <table class="table">
+                        <tr>
+                            <td>
+                                <a href="../consultas/consultaOri.php" class="botaoLateral">Orientador</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="../consultas/consultaQues.php" class="botaoLateral">Questão</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="../consultas/consultaCand.php" class="botaoLateral">Candidato</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <form action="../gerenciadores/GerenciadorDisciplina.php" method="POST">
+									<input class="botaoLateral" type="submit" value="Disciplina" />
+									<input type="hidden" name="acao" value="consultar" />
+								</form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <form action="../gerenciadores/GerenciadorCargo.php" method="POST">
+									<input class="botaoLateral" type="submit" value="Cargo" />
+									<input type="hidden" name="acao" value="consultar">
+								</form>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a href="../consultas/consultaCandGrupo.php" class="botaoLateral">Verificar Classificação</a>
+                </h4>
+            </div>                    
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                   <form action="../gerenciadores/GerenciadorAdministrador.php" method="POST">
+                   	
+						<input class="botaoLateral" type="submit" value="Alterar Senha" />
+						<input type="hidden" name="acao" value="alterar">
+						<input type="hidden" name="codigo" value="1">
+					</form>
+                </h4>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <form action="../gerenciadores/GerenciadorLogin.php" method="POST">
+                    
+						<input class="botaoLateral" type="submit" value="Logout" />
+						<input type="hidden" name="acao" value="logout">
+					</form>
+                </h4>
+            </div>                    
+        </div>
+    </div>

@@ -1,0 +1,9 @@
+O campo "senha" do arquivo "GerenciadorConexao.php" da pasta /TCC/aplicativo/admin deverá ser alterado de 
+acordo com a senha do mysql da máquina para que os CRUDs funcionem corretamente. Para criar a base de dados
+com maior praticidade siga os passos a seguir:
+- Abra um terminal e entre no mysql ($ mysql -u root -p'suasenha');
+- Crie um database com o nome "mydb" (create database mydb;);
+- Saia do mysql (exit);
+- Entre na pasta onde se encontra o aplicativo (deverá estar em /var/www/aplicativo);
+- Digite o seguinte comando: $ mysql -u root -p'suasenha' mydb < tcc.sql;
+Com isso, a base de dados será criada, com o login padrão de administrador (nome "Administrador", senha "admin").
