@@ -2,13 +2,15 @@
     	var aux = "close";
     	$(document).ready(function(){
 			$('.drop').on("click", function(){
-				if($("#cadastrar").attr("class") != $("#consultar").attr("class") && $(this).find("span").hasClass("glyphicon-chevron-up")){	
-					$("#cadastrar").toggleClass("glyphicon-chevron-up glyphicon-chevron-down");	
-					$("#consultar").toggleClass("glyphicon-chevron-up glyphicon-chevron-down");
-				}
-				if($("#cadastrar").attr("class") == $("#consultar").attr("class")){
-					$(this).find("span").toggleClass("glyphicon-chevron-up glyphicon-chevron-down");
-					alert("teste");
+				if($(this).find("span").hasClass("glyphicon-chevron-up")){	
+					$(".drop").find("span").removeClass("glyphicon-chevron-up");	
+					$(".drop").find("span").addClass("glyphicon-chevron-down");
+				}else{
+					if($("#spanCadastrar").attr("class") == $("#spanConsultar").attr("class")){
+						$(this).find("span").toggleClass("glyphicon-chevron-down glyphicon-chevron-up");
+					}else{
+						$(".drop").find("span").toggleClass("glyphicon-chevron-up glyphicon-chevron-down");
+					}
 				}
 			});	
 		});
@@ -17,8 +19,7 @@
         <div class="panel panel-default">
             <div class="panel-heading drop" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> 
                 <h4 class="panel-title">
-                    <a>
-                    Cadastrar</a><span id="cadastrar" class="glyphicon glyphicon-chevron-down pull-right"></span>
+                    <a>Cadastrar</a><span id="spanCadastrar" class="glyphicon glyphicon-chevron-down pull-right"></span>
                 </h4>
             </div>
             <div id="collapseOne" class="panel-collapse collapse">
@@ -56,7 +57,7 @@
         <div class="panel panel-default">
             <div class="panel-heading drop" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
                 <h4 class="panel-title">
-                    <a>Consultar</a><span id="consultar" class="glyphicon glyphicon-chevron-down pull-right" ></span>
+                    <a>Consultar</a><span id="spanConsultar" class="glyphicon glyphicon-chevron-down pull-right" ></span>
                 </h4>
             </div>
             <div id="collapseTwo" class="panel-collapse collapse">

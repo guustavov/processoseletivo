@@ -2,7 +2,7 @@
 	<head>
 		<title>Administração</title>
 		<link type="text/css" rel="stylesheet" href="../../css/estilo.css" />	
-		 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
     
    		<script src= "../../javascript/jquery/jquery-1.8.2.min.js" ></script>
 		<script src="../../javascript/jquery/jquery-ui-1.8.20.custom.min.js"></script>
@@ -27,34 +27,48 @@
 		<div class="container">
 			
 			<div id="cabecalho">
-			<?php
-				include ("../login/protegePaginaAdmin.php");
-				
-				include ("../../html/cabecalho.html");
-			?>
-					
+				<div class="row">
+					<div class="col-sm-12 col-md-12">
+						<?php
+							include ("../login/protegePaginaAdmin.php");
+							
+							include ("../../html/cabecalho.html");
+						?>
+					</div>
+				</div>
 			</div>
 			
 			<!--<div id='load'>
 				<img id='imgLoad' src='../../imagens/ajax-loader.gif'>
 			</div>-->
-			<div class="row">
-				<div class="col-sm-3 col-md-3" >
-				
-				<?php
-					include ("../../html/menuadmin.html");
-				?>
+			<div>
+				<div class="row">
+					<div class="col-sm-3 col-md-3">
 					
-				</div>
-				
-				<div class="col-sm-9 col-md-9" >
-					Bem-Vindo Administrador.
+						<?php
+							include ("../../html/menuadmin.html");
+						?>
+						
+					</div>
+					
+					<div id="conteudo" class="col-sm-9 col-md-9" >
+						Bem-Vindo Administrador.
+					</div>
 				</div>
 			</div>
-				<div id="rodape"> 
-			<?php
-				include ("../../html/rodape.html");				
-			?>	
+			<div id="rodape"> 
+				<div class="row">
+					<div class="col-sm-3 col-md-12">
+						<div class="panel panel-default">
+							<div class="panel-heading">haha</div>
+							<div class="panel-body">
+								<?php
+									include ("../../html/rodape.html");				
+								?>	
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</body>
