@@ -27,15 +27,11 @@
 		<div class="container">
 			
 			<div id="cabecalho">
-				<div class="row">
-					<div class="col-sm-12 col-md-12">
-						<?php
-							include ("../login/protegePaginaAdmin.php");
-							
-							include ("../../html/cabecalho.html");
-						?>
-					</div>
-				</div>
+				<?php
+					include ("../login/protegePaginaAdmin.php");
+					
+					include ("../../html/cabecalho.html");
+				?>
 			</div>
 			
 			<!--<div id='load'>
@@ -51,24 +47,15 @@
 						
 					</div>
 					
-					<div id="conteudo" class="col-sm-9 col-md-9" >
+					<div id="conteudo" class="col-sm-9 col-md-9">
 						Bem-Vindo Administrador.
 					</div>
 				</div>
 			</div>
 			<div id="rodape"> 
-				<div class="row">
-					<div class="col-sm-3 col-md-12">
-						<div class="panel panel-default">
-							<div class="panel-heading">haha</div>
-							<div class="panel-body">
-								<?php
-									include ("../../html/rodape.html");				
-								?>	
-							</div>
-						</div>
-					</div>
-				</div>
+				<?php
+					include ("../../html/rodape.html");				
+				?>	
 			</div>
 		</div>
 	</body>

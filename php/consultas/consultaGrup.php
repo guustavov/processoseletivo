@@ -57,73 +57,78 @@
 		</script>
 	</head>
 	<body onselectstart="return false">
-		<div id="externa">
-		
+		<div class="container">
+			
 			<div id="cabecalho">
 				<?php
-					include("../login/protegePaginaOri.php"); 
-				
+					include ("../login/protegePaginaAdmin.php");
+					
 					include ("../../html/cabecalho.html");
 				?>
-
 			</div>
 			
-			<div id="menuLateral">
-				<?php
-					include ("../../html/menuori.html");
-				?>
-			</div>
-			
-			<div id="conteudo">
-				<h2>Consulta Grupo</h2>
-				<form action="../gerenciadores/GerenciadorGrupo.php" method="POST">
+			<div>
+				<div class="row">
+					<div class="col-sm-3 col-md-3">
 					
-					<input class="consultaGeral" type="submit" value="Consulta Geral" />
-					<input type="hidden" name="acao" value="consultar">
-					<hr>
-				</form>
-				<form action="../gerenciadores/GerenciadorGrupo.php" method="POST">
-						<table>
-							<tr>
-								<td rowspan=4>Consulta por: </td>
-							</tr>
-							<tr>
-								<td>
-									<input type="radio" name="tipo" id="1" value="g.nome"> Cargo 
-								</td>
-								<td>
-									<input type="text" name="" id="campo1" class="valor">
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<input type="radio" name="tipo" id="2" value="g.nome"> Ano
-								</td>
-								<td>
-									<input type="text" name="" id="campo2" onkeypress='return SomenteNumero(event)' maxlength='4' class="valor">
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<input type="radio" name="tipo" id="3" value="o.nome" > Orientador
-								</td>
-								<td>
-									<input type="text" name="" id="campo3" class="valor">
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<input class="consultaGeral" type="submit" value="Consulta por Filtro" id="enviar"/>
-									<input type="hidden" name="acao" value="consultarFiltro">
-								</td>
-						</table>
-					</form>
+						<?php
+							include ("../../html/menuadmin.html");
+						?>
+						
+					</div>
+					
+					<div id="conteudo" class="col-sm-9 col-md-9">
+						<h2>Consulta Grupo</h2>
+						<form action="../gerenciadores/GerenciadorGrupo.php" method="POST">
+							
+							<input class="consultaGeral" type="submit" value="Consulta Geral" />
+							<input type="hidden" name="acao" value="consultar">
+							<hr>
+						</form>
+							<form action="../gerenciadores/GerenciadorGrupo.php" method="POST">
+								<table>
+									<tr>
+										<td rowspan=4>Consulta por: </td>
+									</tr>
+									<tr>
+										<td>
+											<input type="radio" name="tipo" id="1" value="g.nome"> Cargo 
+										</td>
+										<td>
+											<input type="text" name="" id="campo1" class="valor">
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="radio" name="tipo" id="2" value="g.nome"> Ano
+										</td>
+										<td>
+											<input type="text" name="" id="campo2" onkeypress='return SomenteNumero(event)' maxlength='4' class="valor">
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<input type="radio" name="tipo" id="3" value="o.nome" > Orientador
+										</td>
+										<td>
+											<input type="text" name="" id="campo3" class="valor">
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<input class="consultaGeral" type="submit" value="Consulta por Filtro" id="enviar"/>
+											<input type="hidden" name="acao" value="consultarFiltro">
+										</td>
+									</tr>
+								</table>
+							</form>
+						</div>
+					</div>
 				</div>
-			
 				<div id="rodape">
-				<?php
-					include ("../../html/rodape.html");				
-				?>
+					<?php
+						include ("../../html/rodape.html");				
+					?>
 			</div>
 		</div>
 	</body>
